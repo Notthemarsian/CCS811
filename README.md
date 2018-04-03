@@ -12,4 +12,4 @@ Call data_ready() to get new measurements.
 See examples for usage.
 
 The sensor readings seem to drift a lot with temperature and humidity changes. Compensation data can be written to the sensor and this improves stability. 
-See exampleTcorrection for usage. The example uses a BME280 sensor to measure temperature and humidity (driver from catdog2) and writes this data to the ENV_DATA register.
+See exampleTcorrection for usage. The example uses a Bosch BME280 sensor to measure temperature and humidity (BME280 driver from catdog2) and writes this data to the ENV_DATA register.
