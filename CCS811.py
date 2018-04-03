@@ -61,6 +61,27 @@ class CCS811(object):
         else:
             return False
 
+    def get_baseline(self):
+        register = self.i2c.readfrom_mem(self.addr,0x11,2)
+        HB = register[0]
+        LB = register[1]
+        #baseline = (HB << 8) | LB
+        return HB, LB
+
+    def put_envdata(self,humidity,temp):
+        envregister = bytearray([0x00,0x00,0x00,0x00])
+        envregister[0] = int(humidity) << 1
+        t = int(temp//1)
+        tf = temp % 1
+        t_H = (t+25) << 9
+        t_L = int(tf*512)
+        t_comb = t_H | t_L
+        envregister[2] = t_comb >> 8
+        envregister[3] = t_comb & 0xFF
+        self.i2c.writeto_mem(self.addr,0x05,envregister)
+        #return envregister
+
+
 
 """def main():
     from machine import Pin, I2C
