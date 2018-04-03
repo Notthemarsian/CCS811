@@ -6,8 +6,10 @@ Tested with Adafruit CCS811 Air Quality Sensor Breakout. Remember to connect WAK
 Tested with NodeMCU and Wemos D1 mini with MicroPython v1.9.3-8-g63826ac5c ESP8266
 
 The driver starts the sensor in operation mode 1: constant power mode, new measurement every second.
+Mode 0,2,3,4 are not yet implemented.
+
 Call data_ready() to get new measurements.
 See examples for usage.
 
-Mode 0,2,3,4 are not yet implemented.
-Temperature and humidity correction are also not yet implemented.
+The sensor readings seems to drift a lot with temperature and humidity changes. Compensation data can be written to the sensor and this improves stability. 
+See exampleTcorrection for usage. The example uses a BME280 sensor to measure temperature and humidity (driver from catdog2) and writes this data to the ENV_DATA register.
