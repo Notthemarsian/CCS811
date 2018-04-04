@@ -1,6 +1,6 @@
 """
-CCS811 Indoor Air Quality Sensor
-Date:  January 2018
+ams CCS811 Indoor Air Quality Sensor
+Date:  April 2018
 License: This code is public domain
 Based on CCS811 datasheet. Inspired by Adafruit and Sparkfun libraries
 Tested with Adafruit CCS811 Air quality breakout. Product ID: 3566
