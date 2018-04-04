@@ -68,6 +68,12 @@ class CCS811(object):
         #baseline = (HB << 8) | LB
         return HB, LB
 
+    def put_baseline(self,HB,LB):
+        register = bytearray([0x00,0x00])
+        register[0] = HB
+        register[1] = LB
+        self.i2c.writeto_mem(self.addr,0x11,register)
+    
     def put_envdata(self,humidity,temp):
         envregister = bytearray([0x00,0x00,0x00,0x00])
         envregister[0] = int(humidity) << 1
