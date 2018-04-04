@@ -1,7 +1,7 @@
 # CCS811
 Basic MicroPython driver for ams CCS811 connected over I2C.
 
-The ams CCS811 is digital metal oxide gas sensor which detects a wide range of volatile organic compounds.
+The ams CCS811 is a digital metal oxide gas sensor which detects a wide range of volatile organic compounds.
 The sensor outputs a Total VOC value in ppb and an equivalent CO2 level in ppm.
 
 Driver based on datasheet.
