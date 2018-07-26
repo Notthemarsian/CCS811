@@ -13,9 +13,9 @@ from machine import I2C
 class CCS811(object):
     """CCS811 gas sensor. Measures eCO2 in ppm and TVOC in ppb"""
 
-    def __init__(self, i2c=None):
+    def __init__(self, i2c=None, addr=90):
         self.i2c = i2c
-        self.addr = 90      # 0x5A on I2C bus
+        self.addr = addr      # 0x5A = 90, 0x5B = 91
         self.tVOC = 0
         self.eCO2 = 0
         self.mode = 1       # Constant power mode; measurement every second
