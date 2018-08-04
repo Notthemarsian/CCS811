@@ -6,7 +6,8 @@ The sensor outputs a Total VOC value in ppb and an equivalent CO2 level in ppm.
 
 Driver based on datasheet.
 Tested with Adafruit CCS811 Air Quality Sensor Breakout (i2c addr = 90 / 0x5A; alternative addr = 91 / 0x5B). Remember to connect WAKE pin to ground.
-Tested with both NodeMCU and Wemos D1 mini with MicroPython version v1.9.3-8-g63826ac5c ESP8266
+Tested with both NodeMCU and Wemos D1 mini with MicroPython version v1.9.3-8-g63826ac5c ESP8266.
+(Sparkfun CCS811 Air Quality Breakout has default address 91 (0x5B)).
 
 Define sensor c:   c = CCS811.CCS811(i2c=i2c,addr=90)
 
