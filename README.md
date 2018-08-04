@@ -5,10 +5,10 @@ The ams CCS811 is a digital metal oxide gas sensor which detects a wide range of
 The sensor outputs a Total VOC value in ppb and an equivalent CO2 level in ppm.
 
 Driver based on datasheet.
-Tested with Adafruit CCS811 Air Quality Sensor Breakout. Remember to connect WAKE pin to ground.
+Tested with Adafruit CCS811 Air Quality Sensor Breakout (i2c addr = 90 / 0x5A; alternative addr = 91 / 0x5B). Remember to connect WAKE pin to ground.
 Tested with both NodeMCU and Wemos D1 mini with MicroPython version v1.9.3-8-g63826ac5c ESP8266
 
-Define sensor c:   c = CCS811.CCS811(i2c)
+Define sensor c:   c = CCS811.CCS811(i2c=i2c,addr=90)
 
 The driver starts the sensor in operation mode 1: constant power mode, new measurement every second.
 Mode 0,2,3,4 are not implemented.
