@@ -40,9 +40,8 @@ class CCS811(object):
         # Set drive mode 1 - see Figure 13 in datasheet: Measure Mode Register (0x01)
         self.i2c.writeto_mem(self.addr, 0x01, bytearray([0b00011000]))
 
-    def __string__(self):
-        return 'eCO2: %d ppm, TVOC: %d ppb' % (s.eCO2, s.tVOC)
-        # doesn't seem to work
+    def __str__(self):
+        return 'eCO2: %d ppm, TVOC: %d ppb' % (self.eCO2, self.tVOC)
 
     def data_ready(self):
         """returns true if new data was downloaded. Values in .eCO2 and .tVOV"""
